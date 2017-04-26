@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/slider_image_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_132"/>
+
+        <com.disco.cfn.view.viewcustom.CircleIndicator
+            android:id="@+id/indicator"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_30"
+            android:layout_gravity="bottom"
+            app:ci_drawable="@drawable/black_radius"
+            app:ci_drawable_unselected="@drawable/blur_radius"/>
+    </LinearLayout>
+</layout>

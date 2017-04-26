@@ -1,7 +1,9 @@
-package tuananh.com.slideimageinrecyclerview;
+package tuananh.com.slideimageinrecyclerview.view.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+
+import tuananh.com.slideimageinrecyclerview.R;
 
 public class MainActivity extends AppCompatActivity {
     @Override
