@@ -2,17 +2,37 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+
+        <variable
+            name="viewModel"
+            type="tuananh.com.slideimageinrecyclerview.model.Profile"/>
+
+    </data>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
         android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_padding_10"
+            android:layout_marginLeft="@dimen/margin_padding_20"
+            android:drawableLeft="@drawable/img_dots"
+            android:drawablePadding="@dimen/margin_padding_10"
+            android:text="@{viewModel.nameAge}"
+            android:textSize="@dimen/text_size_14"
+            android:textStyle="bold"/>
 
         <android.support.v4.view.ViewPager
             android:id="@+id/slider_image_view_pager"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/size_132"/>
+            android:layout_height="@dimen/size_200"/>
 
-        <com.disco.cfn.view.viewcustom.CircleIndicator
+        <tuananh.com.slideimageinrecyclerview.view.custom.CircleIndicator
             android:id="@+id/indicator"
             android:layout_width="match_parent"
             android:layout_height="@dimen/size_30"
