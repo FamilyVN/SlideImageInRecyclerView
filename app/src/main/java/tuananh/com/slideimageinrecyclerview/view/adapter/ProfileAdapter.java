@@ -11,6 +11,7 @@ import java.util.List;
 import tuananh.com.slideimageinrecyclerview.BR;
 import tuananh.com.slideimageinrecyclerview.R;
 import tuananh.com.slideimageinrecyclerview.databinding.ItemRecyclerProfileBinding;
+import tuananh.com.slideimageinrecyclerview.listener.OnClickShowImageListener;
 import tuananh.com.slideimageinrecyclerview.model.Profile;
 
 /**
@@ -21,10 +22,13 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ProfileV
     private Context mContext;
     private LayoutInflater mLayoutInflater;
     private List<Profile> mProfileList;
+    private OnClickShowImageListener mOnClickShowImageListener;
 
-    public ProfileAdapter(Context context, List<Profile> profileList) {
+    public ProfileAdapter(Context context, List<Profile> profileList,
+                          OnClickShowImageListener onClickShowImageListener) {
         mContext = context;
         mProfileList = profileList;
+        mOnClickShowImageListener = onClickShowImageListener;
         mLayoutInflater = LayoutInflater.from(context);
     }
 
@@ -57,7 +61,7 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ProfileV
         public void bind(Profile profile) {
             mBinding.setVariable(BR.viewModel, profile);
             SlideImageAdapter slideImageAdapter =
-                new SlideImageAdapter(mContext, profile.getImageList());
+                new SlideImageAdapter(mContext, profile, mOnClickShowImageListener);
             mBinding.sliderImageViewPager.setAdapter(slideImageAdapter);
             mBinding.sliderImageViewPager.setOffscreenPageLimit(MAX_SIZE_IMAGE_LOAD);
             mBinding.indicator.setViewPager(mBinding.sliderImageViewPager);

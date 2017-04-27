@@ -1,11 +1,12 @@
 package tuananh.com.slideimageinrecyclerview.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by framgia on 27/04/2017.
  */
-public class Profile {
+public class Profile implements Serializable {
     private int mId;
     private String mName;
     private int mAge;
