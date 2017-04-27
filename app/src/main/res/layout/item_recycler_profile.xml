@@ -28,7 +28,7 @@
             android:textStyle="bold"/>
 
         <android.support.v4.view.ViewPager
-            android:id="@+id/slider_image_view_pager"
+            android:id="@+id/slide_image_view_pager"
             android:layout_width="match_parent"
             android:layout_height="@dimen/size_200"/>
 
